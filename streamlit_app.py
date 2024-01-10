@@ -9,6 +9,7 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
+plt.style.use("ggplot")
 st.set_page_config(
     page_title="Ex-stream-ly Cool App",
     page_icon="🧊",
@@ -139,7 +140,6 @@ if train is not None:
         plt.ylabel("Mean Score Error")
         plt.legend(["Drop", "Fill Mean"])
         plt.title("Mean Score Error Comparison")
-        plt.style.use("ggplot")
         plt.show()
         st.pyplot(fig, use_container_width = True)
         df_results = pd.DataFrame([[str(result_for_drop[0])+"  Drop", str(result_for_drop[1])+"  Drop"],
