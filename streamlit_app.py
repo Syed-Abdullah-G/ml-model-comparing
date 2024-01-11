@@ -12,8 +12,8 @@ from sklearn.ensemble import RandomForestRegressor
 
 plt.style.use("ggplot")
 st.set_page_config(
-    page_title="Ex-stream-ly Cool App",
-    page_icon="🧊",
+    page_title="Home",
+    page_icon="🦈",
     layout = "centered"
 )
 
