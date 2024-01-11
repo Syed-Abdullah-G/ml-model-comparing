@@ -96,8 +96,8 @@ if train is not None:
             )
     if st.button("Select the column", key = "button_1"):
         aux_y = df.copy()
-        df.drop(y, axis =1)
-        X_train, X_test, y_train, y_test = train_test_split(df, aux_y[y], test_size=0.2, random_state=42)
+        temp_drop= df.drop(y, axis =1)
+        X_train, X_test, y_train, y_test = train_test_split(temp_drop, aux_y[y], test_size=0.2, random_state=42)
         # linear regression
         model = LinearRegression()
         model.fit(X_train, y_train)
@@ -112,11 +112,10 @@ if train is not None:
         
         # code block for filling null values with mean
         df = df_fill
-    
-        y = y
+
         aux_y = df.copy()
-        df.drop(y, axis = 1)
-        X_train, X_test, y_train, y_test = train_test_split(df, aux_y[y], test_size=0.2, random_state=42)
+        temp_drop = df.drop(y, axis = 1)
+        X_train, X_test, y_train, y_test = train_test_split(temp_drop, aux_y[y], test_size=0.2, random_state=42)
         # linear regression
         model = LinearRegression()
         model.fit(X_train, y_train)
@@ -132,8 +131,10 @@ if train is not None:
         width = 0.35
         bar_positions_drop = np.arange(len(labels))
         bar_positions_fill = bar_positions_drop + width
-        ax = plt.bar(bar_positions_drop,result_for_drop, width, label = "Drop")
-        ax = plt.bar(bar_positions_fill,result_for_fill,width, label = "Fill Mean")
+        lr = ax.bar(bar_positions_drop,result_for_drop, width, label = "Drop")
+        rgr = ax.bar(bar_positions_fill,result_for_fill,width, label = "Fill Mean")
+        plt.xticks(bar_positions_drop, ['LR', 'RFR'])
+
     
 
         plt.xlabel("ML Method")
