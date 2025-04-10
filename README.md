@@ -33,9 +33,11 @@ All categorical features are one-hot encoded for compatibility with machine lear
 
 ### 🧠 Input Dataset & Options  
 ![Input Options](demo_images/ml_comparer_1.png)
+![Input Options](demo_images/ml_comparer_2.png)
+
 
 ### 📈 Model Evaluation Results  
-![Model Results](demo_images/ml_comparer_2.png)
+![Model Results](demo_images/ml_comparer_3.png)
 
 ---
 
