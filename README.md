@@ -1,35 +1,49 @@
-# 📊 Machine Learning Model Comparison
+# 🤖 Machine Learning Model Comparison
 
-This application provides a comparative analysis of two machine learning models using different data preprocessing techniques. It is built using [Streamlit](https://streamlit.io/) and is accessible as a web app.
+This application compares the performance of different data handling strategies and machine learning models on a given dataset. It applies two primary methods to handle missing data:
 
-## 🔧 Features
+- **Imputation** using mean values  
+- **Elimination** of rows with missing values
 
-- **Missing Data Handling**  
-  The app supports two strategies for dealing with missing data:
-  - **Mean Imputation**: Replaces null values with the mean of the respective column.
-  - **Deletion**: Removes rows that contain null values entirely.
+Then it trains and evaluates two models:
 
-- **Categorical Data Processing**  
-  - Uses **One-Hot Encoding** to convert categorical variables into numerical form.
+- **Linear Regression**  
+- **Random Forest Regressor**
 
-- **Model Comparison**  
-  The app trains the dataset on two popular regression models:
-  - **Linear Regression**
-  - **Random Forest Regressor**
-
-- **Performance Evaluation**  
-  - Computes the **Mean Squared Error (MSE)** for each combination of preprocessing strategy and model.
-  - Identifies the **best-performing model and method** based on the lowest MSE.
-
-## 🧠 Goal
-
-To determine the optimal combination of data processing strategy and machine learning model for accurate predictive analysis.
-
-## 🌐 Live Demo
-
-Check out the app here:  
-👉 [Model Comparison App](https://modelcomparing.streamlit.app/)
+All categorical features are one-hot encoded for compatibility with machine learning models. The application calculates and displays the **Mean Squared Error (MSE)** for each combination of preprocessing method and model.
 
 ---
 
-Feel free to contribute or provide feedback!
+## 🚀 Features
+
+- 📊 One-hot encoding for categorical data  
+- 🧹 Handles missing values via imputation and elimination  
+- 🔍 Compares Linear Regression and Random Forest  
+- 📉 Automatically selects the model with the lowest MSE  
+
+---
+
+## 🌐 Live Demo
+
+👉 [Try it here](https://modelcomparing.streamlit.app/)
+
+---
+
+## 📸 Screenshots
+
+### 🧠 Input Dataset & Options  
+![Input Options](demo_images/ml_comparer_1.png)
+
+### 📈 Model Evaluation Results  
+![Model Results](demo_images/ml_comparer_2.png)
+
+---
+
+## 🛠️ Tech Stack
+
+- Python  
+- scikit-learn  
+- pandas  
+- Streamlit  
+
+---
